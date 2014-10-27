@@ -6,6 +6,13 @@ This workspace consists of Java EE 6 and 7 small examples for "Technologie Java 
 
 Each topic (technology, JSR) has it's own directory (Maven module). In that directory there are multiple subdirectories - one for each examples (Maven sub modules). Thanks to Maven modularity each example POM file has only necessary meta information. All dependencies and plugins configurations are in main pom.xml file.
 
+## Requirements ##
+
+This project has very small system requirements:
+
+* Java SE SDK 1.7 or higher
+* Apache Maven 3.0 or higher
+
 ## How to run? ##
 
 Each example is a independent JEE Maven application. All of them are build based on simple JEE application bootstrap from [introduction-to-jee-ug repository](https://github.com/Smoczysko/introduction-to-jee-ug). In order to run it navigate to its directory in command line and type:
