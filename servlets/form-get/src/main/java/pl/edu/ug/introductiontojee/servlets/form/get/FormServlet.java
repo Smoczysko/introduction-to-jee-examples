@@ -1,4 +1,4 @@
-package pl.edu.ug.introductiontojee.web;
+package pl.edu.ug.introductiontojee.servlets.form.get;
 
 
 import javax.servlet.ServletException;
