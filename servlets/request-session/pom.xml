@@ -4,20 +4,12 @@
 
     <parent>
         <groupId>pl.edu.ug.introductiontojee</groupId>
-        <artifactId>introductiontojee-examples</artifactId>
+        <artifactId>servlet-examples</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>servlet-examples</artifactId>
+    <artifactId>request-session</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>Java EE Servlets Samples</name>
-
-    <modules>
-        <module>form-get</module>
-        <module>form-post</module>
-        <module>request-session</module>
-        <module>servlet-context</module>
-    </modules>
+    <packaging>war</packaging>
 </project>
