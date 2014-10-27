@@ -8,7 +8,7 @@ Each topic (technology, JSR) has it's own directory (Maven module). In that dire
 
 ## How to run? ##
 
-Each example is a independent JEE Maven application. All of them are build based on simple JEE application bootstrap from [introduction-to-jee-ug repository](https://github.com/Smoczysko/introduction-to-jee-ug]). In order to run it navigate to its directory in command line and type:
+Each example is a independent JEE Maven application. All of them are build based on simple JEE application bootstrap from [introduction-to-jee-ug repository](https://github.com/Smoczysko/introduction-to-jee-ug). In order to run it navigate to its directory in command line and type:
 
 `mvn jetty:run`
 
