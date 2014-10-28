@@ -4,21 +4,12 @@
 
     <parent>
         <groupId>pl.edu.ug.introductiontojee</groupId>
-        <artifactId>introductiontojee-examples</artifactId>
+        <artifactId>jsp-examples</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>jsp-examples</artifactId>
+    <artifactId>custom-tag</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>Java EE JSP Samples</name>
-
-    <modules>
-        <module>servlet-output</module>
-        <module>use-bean</module>
-        <module>error-handling</module>
-        <module>include</module>
-        <module>custom-tag</module>
-    </modules>
+    <packaging>war</packaging>
 </project>
