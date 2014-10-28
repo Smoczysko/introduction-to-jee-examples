@@ -3,8 +3,8 @@
 
 <html>
 <body>
-    <jsp:useBean id="storage" class="pl.edu.ug.introductiontojee.jsp.usebean.MessageStorageService" scope="application" />
-    <jsp:useBean id="message" class="pl.edu.ug.introductiontojee.jsp.usebean.Message" scope="request" />
+    <jsp:useBean id="storage" class="pl.edu.ug.introductiontojee.jsp.include.MessageStorageService" scope="application" />
+    <jsp:useBean id="message" class="pl.edu.ug.introductiontojee.jsp.include.Message" scope="request" />
     <jsp:setProperty name="message" property="*" />
 
     <%
