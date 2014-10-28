@@ -4,7 +4,7 @@
 <html>
 <body>
     <jsp:useBean id="storage" class="pl.edu.ug.introductiontojee.jsp.error.MessageStorageService" scope="application" />
-    <jsp:useBean id="message" class="pl.edu.ug.introductiontojee.jsp.usebean.Message" scope="request" />
+    <jsp:useBean id="message" class="pl.edu.ug.introductiontojee.jsp.error.Message" scope="request" />
     <jsp:setProperty name="message" property="*" />
 
     <%
