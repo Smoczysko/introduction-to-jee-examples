@@ -27,6 +27,7 @@ Then enter the URL [http://localhost:8080/example-artifact-id](http://localhost:
 * "The Java EE 5 Tutorial" Oracle [http://docs.oracle.com/javaee/5/tutorial/doc/index.html](http://docs.oracle.com/javaee/5/tutorial/doc/index.html)
 * "Chapter 6. A Multi-module Project" from "Maven by Example", Sonatype: [http://books.sonatype.com/mvnex-book/reference/multimodule.html](http://books.sonatype.com/mvnex-book/reference/multimodule.html)
 * Maven Jetty Plugin: [http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html](http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html)
+* "JSP Tutorial" at www.tutorialpoint.com: [http://www.tutorialspoint.com/jsp/index.htm](http://www.tutorialspoint.com/jsp/index.htm)
 
 ## License
 
