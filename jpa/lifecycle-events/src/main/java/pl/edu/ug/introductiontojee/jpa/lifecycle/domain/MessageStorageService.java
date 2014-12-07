@@ -1,9 +1,8 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.domain;
+package pl.edu.ug.introductiontojee.jpa.lifecycle.domain;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Date;
 import java.util.List;
 
 @Stateless

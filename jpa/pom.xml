@@ -26,6 +26,7 @@
         <module>crud</module>
         <module>ejb-container</module>
         <module>lifecycle-events</module>
+        <module>sql-load-script</module>
     </modules>
 
     <profiles>

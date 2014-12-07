@@ -1,4 +1,4 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.domain;
+package pl.edu.ug.introductiontojee.jpa.lifecycle.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;

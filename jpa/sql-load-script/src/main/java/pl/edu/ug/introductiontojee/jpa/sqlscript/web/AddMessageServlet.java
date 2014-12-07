@@ -1,7 +1,7 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.web;
+package pl.edu.ug.introductiontojee.jpa.sqlscript.web;
 
-import pl.edu.ug.introductiontojee.jpa.ejb.domain.Message;
-import pl.edu.ug.introductiontojee.jpa.ejb.domain.MessageStorageService;
+import pl.edu.ug.introductiontojee.jpa.sqlscript.domain.Message;
+import pl.edu.ug.introductiontojee.jpa.sqlscript.domain.MessageStorageService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

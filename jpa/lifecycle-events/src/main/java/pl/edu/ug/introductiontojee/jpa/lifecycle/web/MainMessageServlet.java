@@ -1,6 +1,6 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.web;
+package pl.edu.ug.introductiontojee.jpa.lifecycle.web;
 
-import pl.edu.ug.introductiontojee.jpa.ejb.domain.MessageStorageService;
+import pl.edu.ug.introductiontojee.jpa.lifecycle.domain.MessageStorageService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

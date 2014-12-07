@@ -1,6 +1,6 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.web;
+package pl.edu.ug.introductiontojee.jpa.sqlscript.web;
 
-import pl.edu.ug.introductiontojee.jpa.ejb.domain.MessageStorageService;
+import pl.edu.ug.introductiontojee.jpa.sqlscript.domain.MessageStorageService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/view/*")
-public class ViewMessageServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/remove/*")
+public class RemoveMessageServlet extends HttpServlet{
     @EJB
     private MessageStorageService storage;
 
@@ -19,7 +19,8 @@ public class ViewMessageServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long messageID = WebUtils.getMessageID(request);
 
-        request.setAttribute("message", storage.get(messageID));
-        request.getRequestDispatcher("/message/view.jsp").forward(request, response);
+        storage.delete(messageID);
+
+        WebUtils.redirectToMainPage(request, response);
     }
 }

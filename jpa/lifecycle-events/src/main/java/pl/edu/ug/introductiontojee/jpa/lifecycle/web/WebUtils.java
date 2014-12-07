@@ -1,4 +1,4 @@
-package pl.edu.ug.introductiontojee.jpa.ejb.web;
+package pl.edu.ug.introductiontojee.jpa.lifecycle.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
