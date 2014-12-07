@@ -44,3 +44,4 @@ After deploying application to server go to the browser and enter URL with follo
 * ejb-container - simple message board app with transactions managed by EJB container. Example uses [crud example](crud) code.
 * lifecycle-events - basic showcase of PrePersist and PreUpdate events for simplifying entity storage service logic. Example uses [ejb-container](ejb-container) code.
 * sql-load-script - example that shows how to load some initial database content with single one-liner in persistence.xml file. Example uses [lifecycle-events](lifecycle-events) code.
+* bean-validation - basic example how to use Bean Validation features to automatically validate entity bean with JPA and give user some basic feedback. Example uses [lifecycle-events](lifecycle-events) partial code.
