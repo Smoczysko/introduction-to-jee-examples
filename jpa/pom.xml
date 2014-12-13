@@ -28,6 +28,7 @@
         <module>lifecycle-events</module>
         <module>sql-load-script</module>
         <module>bean-validation</module>
+        <module>one-to-one</module>
     </modules>
 
     <profiles>
