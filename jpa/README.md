@@ -49,3 +49,4 @@ After deploying application to server go to the browser and enter URL with follo
 * one-to-many - example of how to relate one entity to multiple entities (in this example, how one message can be related to multiple comments).
 * many-to-many - example of how to relate multiple entities to multiple entities (in this example, how one message can be related to multiple tags, and each tag can be related to multiple messages).
 * element-collection - alternative relation solution to one-to-many relation with @ElementCollection annotation. Example uses [one-to-many](one-to-many) code.
+* pagination - shows how to use Java Persistence Query Language (JPQL) to paginate entity listing (with count, limit and offset). Example uses [sql-load-script](sql-load-script) code.

@@ -32,6 +32,7 @@
         <module>one-to-many</module>
         <module>many-to-many</module>
         <module>element-collection</module>
+        <module>pagination</module>
     </modules>
 
     <profiles>
