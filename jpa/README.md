@@ -2,7 +2,7 @@
 
 ## JPA ##
 
-This module covers very basic usage of Java Persistance API together with JTA, EJB and Bean Validation technologies.
+This module covers very basic usage of Java Persistence API. It's divided into two sub modules: [Core](core) and [JPQL](jpql).
 
 ## Requirements ##
 
@@ -22,13 +22,13 @@ This will run built-in HSQLDB Client application that allows to browse database 
 
 ## Scripts ##
 
-Because this module uses stand-alone application server (GlassFish) instead of Jetty, deployment process is a bit more complicated. To simplify things in module root directory there is a **scripts** directory with Bash file that allows to build and deploy application in one command. Usage:
+Because this module (and its sub modules) uses stand-alone application server (GlassFish) instead of Jetty, deployment process is a bit more complicated. To simplify things in module root directory there is a **scripts** directory with Bash file that allows to build and deploy application in one command. Usage:
 
-`./scripts/buildRedeploy.sh <example-name>`
+`./scripts/buildRedeploy.sh <module-name> <example-name>`
 
-where <application-name> is one of the example names listed below. So for example in order to run 'ejb-container' example simply enter following command:
+where <module-name> is either 'core' or 'jpql' and <example-name> is one of the example names listed in Examples section of module README file. So for example in order to run 'ejb-container' example from core module simply enter following command:
 
-`./scripts/buildRedeploy.sh ejb-container`
+`./scripts/buildRedeploy.sh core ejb-container`
 
 Please remember to make script file runnable.
 
@@ -37,16 +37,3 @@ Please remember to make script file runnable.
 After deploying application to server go to the browser and enter URL with following pattern:
 
 `http://localhost:8080/<example-name>`
-
-## Examples ##
-
-* crud - simple message board that shows how to build simple CRUD (Create Read Update Delete) application with basic usage of JPA.
-* ejb-container - simple message board app with transactions managed by EJB container. Example uses [crud example](crud) code.
-* lifecycle-events - basic showcase of PrePersist and PreUpdate events for simplifying entity storage service logic. Example uses [ejb-container](ejb-container) code.
-* sql-load-script - example that shows how to load some initial database content with single one-liner in persistence.xml file. Example uses [lifecycle-events](lifecycle-events) code.
-* bean-validation - basic example how to use Bean Validation features to automatically validate entity bean with JPA and give user some basic feedback. Example uses [lifecycle-events](lifecycle-events) partial code.
-* one-to-one - example of how to relate one entity to one other entity (in this example, how one message can be related to just one author).
-* one-to-many - example of how to relate one entity to multiple entities (in this example, how one message can be related to multiple comments).
-* many-to-many - example of how to relate multiple entities to multiple entities (in this example, how one message can be related to multiple tags, and each tag can be related to multiple messages).
-* element-collection - alternative relation solution to one-to-many relation with @ElementCollection annotation. Example uses [one-to-many](one-to-many) code.
-* pagination - shows how to use Java Persistence Query Language (JPQL) to paginate entity listing (with count, limit and offset). Example uses [sql-load-script](sql-load-script) code.

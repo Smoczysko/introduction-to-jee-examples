@@ -23,18 +23,8 @@
     </dependencies>
 
     <modules>
-        <module>crud</module>
-        <module>ejb-container</module>
-        <module>lifecycle-events</module>
-        <module>sql-load-script</module>
-        <module>bean-validation</module>
-        <module>one-to-one</module>
-        <module>one-to-many</module>
-        <module>many-to-many</module>
-        <module>element-collection</module>
-        <module>pagination</module>
-        <module>string-search</module>
-        <module>dates-search</module>
+        <module>core</module>
+        <module>jpql</module>
     </modules>
 
     <profiles>
@@ -105,7 +95,8 @@
                     <webResources>
                         <resource>
                             <!-- this is relative to the pom.xml directory -->
-                            <directory>${project.parent.basedir}/resources/static</directory>
+                            <!--suppress MavenModelInspection -->
+                            <directory>${project.parent.parent.basedir}/resources/static</directory>
                             <targetPath>static</targetPath>
                         </resource>
                     </webResources>

@@ -2,12 +2,13 @@
 
 clear
 cd $1
+cd $2
 
 echo "************ UNDEPLOYING *******************"
-asadmin undeploy $1
+asadmin undeploy $2
 echo "************ BUILDING **********************"
 mvn clean package
 echo "************ DEPLOYING *********************"
-asadmin deploy target/$1.war
+asadmin deploy target/$2.war
 
-cd ..
+cd ../..
