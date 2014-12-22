@@ -34,6 +34,7 @@
         <module>element-collection</module>
         <module>pagination</module>
         <module>string-search</module>
+        <module>dates-search</module>
     </modules>
 
     <profiles>
