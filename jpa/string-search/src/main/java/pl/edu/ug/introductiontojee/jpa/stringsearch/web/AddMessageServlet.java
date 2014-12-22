@@ -1,7 +1,7 @@
-package pl.edu.ug.introductiontojee.jpa.pagination.web;
+package pl.edu.ug.introductiontojee.jpa.stringsearch.web;
 
-import pl.edu.ug.introductiontojee.jpa.pagination.domain.Message;
-import pl.edu.ug.introductiontojee.jpa.pagination.domain.MessageStorageService;
+import pl.edu.ug.introductiontojee.jpa.stringsearch.domain.Message;
+import pl.edu.ug.introductiontojee.jpa.stringsearch.domain.MessageStorageService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

@@ -1,8 +1,11 @@
-package pl.edu.ug.introductiontojee.jpa.pagination.domain;
+package pl.edu.ug.introductiontojee.jpa.stringsearch.domain;
 
+import javax.annotation.Resource;
 import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.*;
 import java.util.Date;
 import java.util.List;
 
@@ -50,5 +53,11 @@ public class MessageStorageService {
 
     public Long getCount() {
         return (Long) em.createQuery("select count(m) from Message m").getSingleResult();
+    }
+
+    public List<Message> getAllByAuthor(String author) {
+        //noinspection unchecked
+        return em.createQuery("select m from Message m where m.author = :author").
+                setParameter("author", author).getResultList();
     }
 }

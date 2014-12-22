@@ -33,6 +33,7 @@
         <module>many-to-many</module>
         <module>element-collection</module>
         <module>pagination</module>
+        <module>string-search</module>
     </modules>
 
     <profiles>

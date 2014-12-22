@@ -2,7 +2,7 @@ package pl.edu.ug.introductiontojee.jpa.pagination.web;
 
 import pl.edu.ug.introductiontojee.jpa.pagination.domain.MessageStorageService;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/view/*")
 public class ViewMessageServlet extends HttpServlet{
-    @Inject
+    @EJB
     private MessageStorageService storage;
 
     @Override
