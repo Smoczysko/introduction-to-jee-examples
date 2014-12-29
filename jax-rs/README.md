@@ -22,7 +22,7 @@ Please remember to make script file runnable.
 
 ## Examples ##
 
-* crud - simple RESTful service for message board that shows how to build simple CRUD (Create Read Update Delete). Example is similar to [../jpa/core/crud](jpa crud) example.
+* crud - simple RESTful service for message board that shows how to build simple CRUD (Create Read Update Delete). Example is similar to [JPA crud](../jpa/core/crud) example.
 * media-types - example that shows how to configure media type that REST method produces or consumes. In addition, it shows how to produce text/xml response from POJO class with simple @XmlRootElement annotation. Example uses [crud](crud) code.
 * response-code - shows how to return specific response code (and message) accordingly to method and arguments. Example uses [crud](crud) code.
 * client - shows how our REST resources can request data from different methods/services. Example uses [response-code](response-code) code.
