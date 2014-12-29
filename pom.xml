@@ -13,6 +13,7 @@
         <module>servlets</module>
         <module>jsp</module>
         <module>jpa</module>
+        <module>jax-rs</module>
     </modules>
 
     <dependencies>
