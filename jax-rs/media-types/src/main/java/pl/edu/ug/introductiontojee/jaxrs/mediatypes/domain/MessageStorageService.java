@@ -30,6 +30,7 @@ public class MessageStorageService {
         for (Message message : messages) {
             if (message.getId().equals(id)) {
                 messages.remove(message);
+                return;
             }
         }
     }
