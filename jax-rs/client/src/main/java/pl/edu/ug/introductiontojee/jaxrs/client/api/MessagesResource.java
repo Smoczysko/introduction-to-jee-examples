@@ -1,111 +1,39 @@
 package pl.edu.ug.introductiontojee.jaxrs.client.api;
 
-import pl.edu.ug.introductiontojee.jaxrs.client.domain.Message;
-import pl.edu.ug.introductiontojee.jaxrs.client.domain.MessageStorageService;
-
-import javax.ejb.EJB;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Path("messages")
+@Path("weather")
 public class MessagesResource {
-    @EJB
-    MessageStorageService messageStorageService;
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Message> getAllMessages() {
-        return messageStorageService.getAllMessages();
-    }
-
-    @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response get(@PathParam("id") Long id) {
-        Message message = messageStorageService.get(id);
-
-        if (message == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-
-        return Response.status(Response.Status.OK).entity(message).build();
-    }
-
-    @PUT
-    public Response addMessage(
-            @FormParam("author") String author,
-            @FormParam("title") String title,
-            @FormParam("message") String message) {
-
-        Message newMessage = new Message();
-        newMessage.setAuthor(author);
-        newMessage.setTitle(title);
-        newMessage.setMessage(message);
-
-        messageStorageService.add(newMessage);
-
-        return Response.status(Response.Status.CREATED).build();
-    }
-
-    @DELETE
-    @Path("{id}")
-    public Response delete(@PathParam("id") Long id) {
-        Message message = messageStorageService.get(id);
-
-        if (message == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-
-        messageStorageService.delete(message);
-
-        return Response.status(Response.Status.OK).build();
-    }
-
-    @POST
-    @Path("{id}")
-    public Response editMessage(
-            @PathParam("id") Long id,
-            @FormParam("author") String author,
-            @FormParam("title") String title,
-            @FormParam("message") String messageText) {
-
-        Message message = messageStorageService.get(id);
-
-        if (message == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-
-        message.setAuthor(author);
-        message.setTitle(title);
-        message.setMessage(messageText);
-
-        messageStorageService.update(message);
-
-        return Response.status(Response.Status.OK).build();
-    }
-
-    @GET
-    @Path("list")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response list(
-            @QueryParam("start") int start,
-            @QueryParam("end") int end) {
-
-        List<Message> messages = new ArrayList<Message>();
+    public Response list(@QueryParam("city") String city) {
         Client client = ClientBuilder.newClient();
+        JsonObject apiData = client.target("http://api.openweathermap.org/data/2.5/weather?q=" + city).request().get(JsonObject.class);
 
-        for (int i = start; i < end; i++) {
-            Message message = client.target("http://localhost:8080/client/api/messages/" + i).request().get(Message.class);
+        JsonObjectBuilder weatherData = Json.createObjectBuilder();
+        JsonObject main = apiData.getJsonObject("main");
 
-            messages.add(message);
-        }
+        weatherData.add("pressure", main.getJsonNumber("pressure").toString() + " hPa");
+        weatherData.add("humidity", main.getJsonNumber("humidity").toString() + "%");
+        Double temperature = main.getJsonNumber("temp").doubleValue() - 273.15;
+        weatherData.add("temperature", temperature.toString() + " C");
 
-        return Response.status(Response.Status.OK).entity(messages).build();
+        JsonObjectBuilder infoData = Json.createObjectBuilder();
+        infoData.add("city", apiData.getString("name"));
+        infoData.add("countryCode", apiData.getJsonObject("sys").getString("country"));
+        JsonObject cords = apiData.getJsonObject("coord");
+        infoData.add("latitude", cords.getJsonNumber("lat").toString());
+        infoData.add("longitude", cords.getJsonNumber("lon").toString());
+
+        JsonObject response = Json.createObjectBuilder().add("info", infoData.build()).add("weather", weatherData.build()).build();
+
+        return Response.status(Response.Status.OK).entity(response).build();
     }
 }

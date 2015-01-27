@@ -32,3 +32,7 @@ Please remember to make script file runnable.
 After deploying application to server go to the browser and enter URL with following pattern:
 
 `http://localhost:8080/<example-name>`
+
+## References ##
+
+* OpenWeatherMap REST API documentation [http://openweathermap.org/api](http://openweathermap.org/api) (for [client](client) example purposes).
