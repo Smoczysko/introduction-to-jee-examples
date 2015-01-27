@@ -34,6 +34,7 @@
         <module>crud</module>
         <module>media-types</module>
         <module>response-code</module>
+        <module>json-object</module>
         <module>client</module>
     </modules>
 </project>

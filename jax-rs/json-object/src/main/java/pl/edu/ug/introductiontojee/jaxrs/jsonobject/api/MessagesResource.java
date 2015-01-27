@@ -1,21 +1,32 @@
-package pl.edu.ug.introductiontojee.jaxrs.responsecode.api;
+package pl.edu.ug.introductiontojee.jaxrs.jsonobject.api;
 
-import pl.edu.ug.introductiontojee.jaxrs.responsecode.domain.Message;
-import pl.edu.ug.introductiontojee.jaxrs.responsecode.domain.MessageStorageService;
+import pl.edu.ug.introductiontojee.jaxrs.jsonobject.domain.Message;
+import pl.edu.ug.introductiontojee.jaxrs.jsonobject.domain.MessageStorageService;
 
 import javax.ejb.EJB;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("messages")
+@Produces(MediaType.APPLICATION_JSON)
 public class MessagesResource {
     @EJB
     MessageStorageService messageStorageService;
 
     @GET
     public Response getAllMessages() {
-        return Response.status(Response.Status.OK).entity(messageStorageService.getAllMessages()).build();
+        JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
+        List<Message> messages = messageStorageService.getAllMessages();
+
+        for (Message message : messages) {
+            jsonArrayBuilder.add(message.toJsonObject());
+        }
+
+        return Response.status(Response.Status.OK).entity(jsonArrayBuilder.build()).build();
     }
 
     @GET
@@ -27,7 +38,7 @@ public class MessagesResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
 
-        return Response.status(Response.Status.OK).entity(message).build();
+        return Response.status(Response.Status.OK).entity(message.toJsonObject()).build();
     }
 
     @PUT
