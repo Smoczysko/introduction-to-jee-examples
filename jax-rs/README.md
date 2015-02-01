@@ -37,3 +37,4 @@ After deploying application to server go to the browser and enter URL with follo
 ## References ##
 
 * OpenWeatherMap REST API documentation [http://openweathermap.org/api](http://openweathermap.org/api) (for [client](client) example purposes).
+* "REST: From GET to HATEOAS" presentation (slides) by Jos Dirksen [http://www.slideshare.net/josdirksen/rest-from-get-to-hateoas](http://www.slideshare.net/josdirksen/rest-from-get-to-hateoas)
